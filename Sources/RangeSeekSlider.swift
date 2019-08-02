@@ -341,7 +341,7 @@ import UIKit
             if disableRange && selectedValue >= minValue {
                 selectedMaxValue = selectedValue
             } else {
-                selectedMaxValue = max(selectedValue, selectedMinValue)
+                selectedMaxValue = max(selectedValue, minValue)
             }
         case .none:
             // no need to refresh the view because it is done as a side-effect of setting the property
@@ -636,25 +636,25 @@ import UIKit
 
         let diff: CGFloat = selectedMaxValue - selectedMinValue
 
-        if diff < minDistance {
-            switch handleTracking {
-            case .left:
-                selectedMinValue = selectedMaxValue - minDistance
-            case .right:
-                selectedMaxValue = selectedMinValue + minDistance
-            case .none:
-                break
-            }
-        } else if diff > maxDistance {
-            switch handleTracking {
-            case .left:
-                selectedMinValue = selectedMaxValue - maxDistance
-            case .right:
-                selectedMaxValue = selectedMinValue + maxDistance
-            case .none:
-                break
-            }
-        }
+//        if diff < minDistance {
+//            switch handleTracking {
+//            case .left:
+//                selectedMinValue = selectedMaxValue - minDistance
+//            case .right:
+//                selectedMaxValue = selectedMinValue + minDistance
+//            case .none:
+//                break
+//            }
+//        } else if diff > maxDistance {
+//            switch handleTracking {
+//            case .left:
+//                selectedMinValue = selectedMaxValue - maxDistance
+//            case .right:
+//                selectedMaxValue = selectedMinValue + maxDistance
+//            case .none:
+//                break
+//            }
+//        }
 
         // ensure the minimum and maximum selected values are within range. Access the values directly so we don't cause this refresh method to be called again (otherwise changing the properties causes a refresh)
         if selectedMinValue < minValue {
