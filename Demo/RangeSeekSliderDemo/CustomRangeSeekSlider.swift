@@ -21,9 +21,9 @@ import UIKit
         ]
 
     override func setupStyle() {
-        let pink: UIColor = #colorLiteral(red: 0.0000000000, green: 0.5019607843, blue: 0.0000000000, alpha: 1) // greenCSS3 #008000
-        let gray: UIColor = #colorLiteral(red: 0.5019607843, green: 0.5019607843, blue: 0.5019607843, alpha: 1) // gray #808080
-
+        let pink: UIColor = UIColor.yellow // greenCSS3 #008000  #colorLiteral(red: 0.0000000000, green: 0.5019607843, blue: 0.5019607843, alpha: 1)
+        let gray1: UIColor = #colorLiteral(red: 0.5019607843, green: 0.5019607843, blue: 0.5019607843, alpha: 1) // gray #808080
+        let gray: UIColor = UIColor.purple // gray #808080
         minValue = 0.0
         maxValue = CGFloat(prices.count - 1)
         selectedMinValue = 15.0

@@ -44,10 +44,11 @@ final class ViewController: UIViewController {
 
         // custom number formatter range slider
         rangeSliderCustom.delegate = self
-        rangeSliderCustom.minValue = 0.0
+        rangeSliderCustom.minValue = -100.0
         rangeSliderCustom.maxValue = 100.0
-        rangeSliderCustom.selectedMinValue = 40.0
-        rangeSliderCustom.selectedMaxValue = 60.0
+        rangeSliderCustom.selectedMinValue = 0.0
+        rangeSliderCustom.selectedMaxValue = 0.0
+        rangeSliderCustom.disableRange = true
         rangeSliderCustom.handleImage = #imageLiteral(resourceName: "custom-handle")
         rangeSliderCustom.selectedHandleDiameterMultiplier = 1.0
         rangeSliderCustom.colorBetweenHandles = .red
