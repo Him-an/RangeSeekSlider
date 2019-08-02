@@ -55,6 +55,8 @@ final class ViewController: UIViewController {
         rangeSliderCustom.lineHeight = 10.0
         rangeSliderCustom.numberFormatter.positivePrefix = "$"
         rangeSliderCustom.numberFormatter.positiveSuffix = "M"
+
+//        rangeSliderCustom.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2.0)
     }
 }
 
