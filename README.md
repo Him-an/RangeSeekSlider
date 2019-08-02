@@ -14,6 +14,8 @@
 This library is based on [TomThorpe/TTRangeSlider](https://github.com/TomThorpe/TTRangeSlider) (Objective-C) and made with Swift.
 
 ![demo](images/demo.gif)
+## BidirectionalSlider 双向滑动条
+![demo](images/BidirectionalSlider.gif)
 
 ## Demo
 You can try on [Appetize.io](https://appetize.io/app/v3pzcncpffgth3qqe1v8a1ktg4)
