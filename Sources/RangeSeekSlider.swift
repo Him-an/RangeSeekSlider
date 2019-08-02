@@ -122,6 +122,9 @@ import UIKit
         }
     }
 
+
+    @IBInspectable open var maxLabelRotationAngle: CGFloat = 0.0
+
     /// The color of the minimum value text label. If not set, the default is the tintColor.
     @IBInspectable open var minLabelColor: UIColor?
 
@@ -566,7 +569,7 @@ import UIKit
 
         let newMaxLabelCenter: CGPoint = CGPoint(x: rightHandle.frame.midX,
                                                  y: rightHandle.frame.maxY + (maxLabelTextSize.height/2) + labelPadding)
-        
+        print(rightHandle.frame.midX, rightHandle.frame.maxY + (maxLabelTextSize.height/2) + labelPadding)
         let newLeftMostXInMaxLabel: CGFloat = newMaxLabelCenter.x - maxLabelTextSize.width / 2.0
         let newRightMostXInMinLabel: CGFloat = newMinLabelCenter.x + minLabelTextSize.width / 2.0
         let newSpacingBetweenTextLabels: CGFloat = newLeftMostXInMaxLabel - newRightMostXInMinLabel
@@ -602,6 +605,16 @@ import UIKit
                 maxLabel.frame.origin.x = frame.width - maxLabel.frame.width
                 minLabel.frame.origin.x = maxLabel.frame.origin.x - minSpacingBetweenLabels - minLabel.frame.width
             }
+        }
+
+        if maxLabelRotationAngle != 0.0 {
+            maxLabel.transform = CATransform3DMakeAffineTransform(CGAffineTransform(rotationAngle: maxLabelRotationAngle)) // CATransform3DMakeRotation(-CGFloat.pi / 2.0, 1, 1, 0) // CGAffineTransform(rotationAngle: -CGFloat.pi / 2.0)
+            var diff: CGFloat = 0.0
+            if maxLabel.frame.origin.x < minLabel.frame.origin.x {
+                diff = minLabel.frame.origin.x - maxLabel.frame.origin.x
+                diff = diff / 30.0
+            }
+            maxLabel.frame = CGRect(x: maxLabel.frame.origin.x + diff, y: maxLabel.frame.origin.y - 25.0, width: 14.0, height: 75.0)
         }
     }
 

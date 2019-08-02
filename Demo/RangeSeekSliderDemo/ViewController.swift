@@ -49,14 +49,19 @@ final class ViewController: UIViewController {
         rangeSliderCustom.selectedMinValue = 0.0
         rangeSliderCustom.selectedMaxValue = 0.0
         rangeSliderCustom.disableRange = true
-        rangeSliderCustom.handleImage = #imageLiteral(resourceName: "custom-handle")
+//        rangeSliderCustom.handleImage = #imageLiteral(resourceName: "custom-handle")
+        rangeSliderCustom.handleColor = .white
+//        rangeSliderCustom.tintColor = .init(red: 200, green: 200, blue: 200, alpha: 0.5)
         rangeSliderCustom.selectedHandleDiameterMultiplier = 1.0
-        rangeSliderCustom.colorBetweenHandles = .red
-        rangeSliderCustom.lineHeight = 10.0
-        rangeSliderCustom.numberFormatter.positivePrefix = "$"
-        rangeSliderCustom.numberFormatter.positiveSuffix = "M"
+        rangeSliderCustom.colorBetweenHandles = .blue
+        rangeSliderCustom.lineHeight = 5.0
+        
+//        rangeSliderCustom.numberFormatter.positivePrefix = "$"
+//        rangeSliderCustom.numberFormatter.positiveSuffix = "M"
 
-//        rangeSliderCustom.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2.0)
+
+        rangeSliderCustom.maxLabelRotationAngle = CGFloat.pi / 2.0
+        rangeSliderCustom.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2.0)
     }
 }
 
